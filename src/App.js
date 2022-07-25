@@ -4,7 +4,6 @@ import Main from './Main';
 import Footer from './Footer';
 
 
-
 class App extends React.Component{
 
 
