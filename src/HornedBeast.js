@@ -14,22 +14,21 @@ class HornedBeast extends React.Component {
   };
 
   //whys handlelikes have the () in between the =s
-  handleLikes = () => {
+  handleHearts = () => {
     this.setState({
       hearts: this.state.hearts + 1
-    })
-  }
+    });
+  };
 
   render(){
-
-
     return(
-      
 
         <>
          <h2>{this.props.title}</h2>
         <img src={this.props.image_url} alt='' title=''/>
         <p>{this.props.description}</p> 
+        <p>{this.state.hearts} Hearts</p>
+        <p onClick={this.handleHearts}>Click to Heart</p>
       </>
     )
 

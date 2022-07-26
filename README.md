@@ -86,20 +86,20 @@ Estimate of time needed to complete: 1.5 hours
 
 Start time: 3:55PM
 
-Finish time: _____
+Finish time: 4:05PM
 
-Actual time needed to complete: _____
+Actual time needed to complete: :10
 
 
-Number and name of feature: ________________________________
+Number and name of feature: #3 Add Bootstrap
 
-Estimate of time needed to complete: _____
+Estimate of time needed to complete: :30
 
-Start time: _____
+Start time: NA
 
-Finish time: _____
+Finish time: NA
 
-Actual time needed to complete: _____
+Actual time needed to complete: :25
 
 
 Number and name of feature: ________________________________
