@@ -4,17 +4,17 @@ import { Container } from 'react-bootstrap';
 import {Row} from 'react-bootstrap';
 import {Col} from 'react-bootstrap';
 // import Image from 'react-bootstrap';
-import data from './data/data.json'
+// import data from './data/data.json'
 
 
 class Main extends React.Component {
 
   
   render(){
-    let beastsArray = [];
-    data.forEach((newBeast, index) => {
-      beastsArray.push(<HornedBeast title={newBeast.title} image_url={newBeast.image_url} description={newBeast.description} /> );
-    });
+    // let beastsArray = [];
+    // data.forEach((newBeast, index) => {
+    //   beastsArray.push(<HornedBeast title={newBeast.title} image_url={newBeast.image_url} description={newBeast.description} /> );
+    // });
     // const beastTitles = this.props.title;
     // const beastImages = this.props.image_url;
     // const beastScript = this.props.description;
@@ -29,9 +29,9 @@ class Main extends React.Component {
         <Row>
           <Col>
             <HornedBeast
-             title={beastsArray[0].title}
-             imageUrl={beastsArray[0].image_url}
-              description={beastsArray[0].description} 
+            //  title={beastsArray[0].title}
+            //  imageUrl={beastsArray[0].image_url}
+            //   description={beastsArray[0].description} 
               />
           </Col>
            <Col>
