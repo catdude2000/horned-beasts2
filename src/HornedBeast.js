@@ -1,30 +1,41 @@
 import React from 'react';
 // import Main from './Main'
 // import { Button } from 'bootstrap';
-import data from './data/data.json'
+// import data from './data/data.json'
 
 
 class HornedBeast extends React.Component {
+
+  constructor(props){
+    super(props);
+    this.state = {
+      hearts: 0
+    };
+  };
+
+  //whys handlelikes have the () in between the =s
+  handleLikes = () => {
+    this.setState({
+      hearts: this.state.hearts + 1
+    })
+  }
+
   render(){
 
-    let beastsArray = [];
-    data.forEach((newBeast, index) => {
-      beastsArray.push(<HornedBeast title={newBeast.title} image_url={newBeast.image_url} description={newBeast.description} /> );
-    });
-
-    // console.log(beastsArray, 'beastarray')
 
     return(
-      <>
-      <h2>{beastsArray[0].props.title}</h2>
-      <img src={beastsArray[0].props.image_url} alt='' title=''/>
-      <p>{beastsArray[0].props.description}</p>
+      
 
-
-      {/* <Button>Heart</Button> */}
+        <>
+         <h2>{this.props.title}</h2>
+        <img src={this.props.image_url} alt='' title=''/>
+        <p>{this.props.description}</p> 
       </>
     )
-  }
+
+    
+  }    
+  
 }
 
 export default HornedBeast;
