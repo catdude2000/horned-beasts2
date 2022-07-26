@@ -21,10 +21,6 @@ class HornedBeast extends React.Component {
       <p>{beastsArray[0].props.description}</p>
 
 
-
-
-
-
       {/* <Button>Heart</Button> */}
       </>
     )
