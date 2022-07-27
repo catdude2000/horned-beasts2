@@ -22,20 +22,24 @@ class HornedBeast extends React.Component {
   };
 
   clickHelper = () => {
-    this.props.handleOnShowModal(this.props.title)
+    this.props.handleOnShowModal(this.props.title, this.props.image_url, this.props.description)
   };
 
 
   render(){
+    console.log(this.props.image_url, 'hbimgurl')
     return(
 
         <>
         <Col>
         <Card>
-          <Card.Title onClick={this.clickHelper} >{this.props.title}</Card.Title>
-          <Card.Img
+          <Card.Title>
+            {this.props.title}
+            </Card.Title>
+          <Card.Img 
           src={this.props.image_url}
-          alt={this.props.title}
+          // alt={this.props.title}
+          onClick={this.clickHelper}
           />
           <p>{this.props.description}</p> 
           <p>{this.state.hearts} Hearts</p>

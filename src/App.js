@@ -16,8 +16,6 @@ constructor(props){
 }
 
 
-
-
   handleOnHide = () => {
     this.setState({
       showModal: false
@@ -28,13 +26,15 @@ constructor(props){
   handleOnShowModal = (title, image_url, description) => {
     this.setState({
       showModal: true,
-      selecBeast: title, image_url, description
+      selecBeastTitle: title,
+      selecBeastImg: image_url,
+      selecBeastDes: description
+
     })
   }
 
-
-
 render(){
+  console.log(data, 'data')
   return(
     <>
     <Header/>
@@ -46,10 +46,15 @@ render(){
     <Footer/>
     <Modal show={this.state.showModal} onHide={this.handleOnHide}>
       <Modal.Header closeButton>
-        <Modal.Title>
-          {this.state.selecBeast}
-        </Modal.Title>
+{this.state.selecBeastTitle}
       </Modal.Header>
+      <Modal
+        <Modal.Body>
+          
+          {this.state.selecBeastImg}
+          {this.state.selecBeastDes}
+        </Modal.Body>
+
     </Modal>
     </>
   );
