@@ -1,22 +1,18 @@
 import React from 'react';
-import HornedBeast from './HornedBeast';
-import { Container } from 'react-bootstrap';
-import {Row} from 'react-bootstrap';
-import {Col} from 'react-bootstrap';
+import HornedBeast from './HornedBeast.js';
+import { Container, Row, Col } from 'react-bootstrap';
 // import Image from 'react-bootstrap';
 import data from './data/data.json'
 
-
 class Main extends React.Component {
 
-  
   render(){
 
-    let beastsArray = [];
-    data.forEach((newBeast, index) => {
-      beastsArray.push(<HornedBeast title={newBeast.title} image_url={newBeast.image_url} description={newBeast.description} key={index} /> );
-    });
+    let beastsArray = this.props.data.map((newBeast, index) => {
 
+    return <HornedBeast title={newBeast.title} image_url={newBeast.image_url} description={newBeast.description} key={index}   handleOnShowModal={this.props.handleOnShowModal}
+     /> 
+    });
 
     return(
       <>
@@ -24,12 +20,13 @@ class Main extends React.Component {
         <main>
           {beastsArray}
         </main>
-      {/* <Container>
+      <Container>
         <Row>
           <Col>
-            <HornedBeast
+          {beastsArray}
+            {/* <HornedBeast
             title={this.props.title}  image_url={this.props.image_url}  description={this.props.description}
-            />
+            /> */}
           </Col>
            <Col>
            </Col>
@@ -37,10 +34,8 @@ class Main extends React.Component {
 
            </Col>
         </Row>
-       */}
-      {/* <HornedBeast title="Rhino Family" imageUrl="https://images.unsplash.com/photo-1512636618879-bbe79107e9e3?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=bd9460ee6d1ddbb6b1ca7be86dfc4590&auto=format&fit=crop&w=1825&q=80" description="Parent rhino with two babies" />
-      <HornedBeast title="Unicorn Head" imageUrl="https://www.dhresource.com/0x0s/f2-albu-g5-M00-1A-11-rBVaI1hsIIiALxKzAAIHjSU3VkE490.jpg/wholesale-halloween-costume-prop-unicorn.jpg" description="Someone wearing a very silly unicorn head mask" /> */}
-      {/* </Container> */}
+    
+      </Container>
       </>
     );
   }
