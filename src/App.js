@@ -2,16 +2,63 @@ import React from 'react';
 import Header from './Header';
 import Main from './Main';
 import Footer from './Footer';
+import data from './data/data.json'
+import { Modal, Card } from 'react-bootstrap';
 
 class App extends React.Component{
 
+constructor(props){
+  super(props);
+  this.state = {
+    showModal: false,
+    selecBeast: ''
+  }
+}
+
+
+  handleOnHide = () => {
+    this.setState({
+      showModal: false
+    })
+  }
+
+
+  handleOnShowModal = (title, image_url, description) => {
+    this.setState({
+      showModal: true,
+      selecBeastTitle: title,
+      selecBeastImg: image_url,
+      selecBeastDes: description
+
+    })
+  }
 
 render(){
+  console.log(data, 'data')
   return(
     <>
     <Header/>
-    <Main/>
+    <Main
+    data={data}
+    handleOnShowModal={this.handleOnShowModal}
+    
+    />
     <Footer/>
+    <Modal show={this.state.showModal} onHide={this.handleOnHide}>
+      <Modal.Header closeButton>
+        {this.state.selecBeastTitle}
+      </Modal.Header>
+        <Card>
+        {/* <Modal.Body> */}
+          <Card.Img src={this.state.selecBeastImg} />
+          
+</Card>
+
+
+          {this.state.selecBeastDes}
+        {/* </Modal.Body> */}
+
+    </Modal>
     </>
   );
 }
