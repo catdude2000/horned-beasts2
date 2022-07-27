@@ -1,4 +1,5 @@
 import React from 'react';
+import { Card, Col } from 'react-bootstrap';
 // import Main from './Main'
 // import { Button } from 'bootstrap';
 // import data from './data/data.json'
@@ -20,15 +21,31 @@ class HornedBeast extends React.Component {
     });
   };
 
+  clickHelper = () => {
+    this.props.handleOnShowModal(this.props.title)
+  };
+
+
   render(){
     return(
 
         <>
-         <h2>{this.props.title}</h2>
-        <img src={this.props.image_url} alt='' title=''/>
-        <p>{this.props.description}</p> 
-        <p>{this.state.hearts} Hearts</p>
-        <p onClick={this.handleHearts}>Click to Heart</p>
+        <Col>
+        <Card>
+          <Card.Title onClick={this.clickHelper} >{this.props.title}</Card.Title>
+          <Card.Img
+          src={this.props.image_url}
+          alt={this.props.title}
+          />
+          <p>{this.props.description}</p> 
+          <p>{this.state.hearts} Hearts</p>
+          <p onClick={this.handleHearts}>Click to Heart</p>
+
+        </Card>
+        </Col>
+         {/* <h2>{this.props.title}</h2>
+        <img src={this.props.image_url} alt='' title=''/> */}
+
       </>
     )
 
