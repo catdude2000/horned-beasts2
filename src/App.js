@@ -15,13 +15,11 @@ constructor(props){
   }
 }
 
-
   handleOnHide = () => {
     this.setState({
       showModal: false
     })
   }
-
 
   handleOnShowModal = (title, image_url, description) => {
     this.setState({
@@ -29,7 +27,6 @@ constructor(props){
       selecBeastTitle: title,
       selecBeastImg: image_url,
       selecBeastDes: description
-
     })
   }
 
@@ -41,7 +38,6 @@ render(){
     <Main
     data={data}
     handleOnShowModal={this.handleOnShowModal}
-    
     />
     <Footer/>
     <Modal show={this.state.showModal} onHide={this.handleOnHide}>
@@ -49,15 +45,9 @@ render(){
         {this.state.selecBeastTitle}
       </Modal.Header>
         <Card>
-        {/* <Modal.Body> */}
           <Card.Img src={this.state.selecBeastImg} />
-          
-</Card>
-
-
+        </Card>
           {this.state.selecBeastDes}
-        {/* </Modal.Body> */}
-
     </Modal>
     </>
   );
