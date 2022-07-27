@@ -19,20 +19,16 @@ console.log(this.props.data, 'imageurl')
           {beastsArray}
         </main> */}
       <Container>
-        <Row>
-          <Col>
+        <Row lg={3}>
+          {/* <Col>
           {beastsArray}
-            {/* <HornedBeast
-            title={this.props.title}  image_url={this.props.image_url}  description={this.props.description}
-            /> */}
-          </Col>
-           <Col>
+          </Col> */}
+          {beastsArray}
+           {/* <Col>
            </Col>
            <Col>
-
-           </Col>
+           </Col> */}
         </Row>
-    
       </Container>
       </>
     );

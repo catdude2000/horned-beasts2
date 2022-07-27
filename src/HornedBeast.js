@@ -34,12 +34,13 @@ class HornedBeast extends React.Component {
         <Col>
         <Card>
           <Card.Title>
-            {this.props.title}
+                      
+            {this.props.title} 
             </Card.Title>
           <Card.Img 
           src={this.props.image_url}
-          // alt={this.props.title}
-          onClick={this.clickHelper}
+          alt={this.props.title}
+onClick={this.clickHelper} 
           />
           <p>{this.props.description}</p> 
           <p>{this.state.hearts} Hearts</p>

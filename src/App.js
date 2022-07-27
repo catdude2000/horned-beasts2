@@ -3,7 +3,7 @@ import Header from './Header';
 import Main from './Main';
 import Footer from './Footer';
 import data from './data/data.json'
-import { Modal } from 'react-bootstrap';
+import { Modal, Card } from 'react-bootstrap';
 
 class App extends React.Component{
 
@@ -46,14 +46,17 @@ render(){
     <Footer/>
     <Modal show={this.state.showModal} onHide={this.handleOnHide}>
       <Modal.Header closeButton>
-{this.state.selecBeastTitle}
+        {this.state.selecBeastTitle}
       </Modal.Header>
-      <Modal
-        <Modal.Body>
+        <Card>
+        {/* <Modal.Body> */}
+          <Card.Img src={this.state.selecBeastImg} />
           
-          {this.state.selecBeastImg}
+</Card>
+
+
           {this.state.selecBeastDes}
-        </Modal.Body>
+        {/* </Modal.Body> */}
 
     </Modal>
     </>
