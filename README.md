@@ -106,11 +106,11 @@ Number and name of feature: 2.1 Display a Modal
 
 Estimate of time needed to complete: 2.5 hours
 
-Start time: _____
+Start time: 1:55
 
-Finish time: _____
+Finish time: 4:10
 
-Actual time needed to complete: _____
+Actual time needed to complete: 2:15
 
 
 Number and name of feature: ________________________________
