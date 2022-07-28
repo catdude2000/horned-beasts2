@@ -12,6 +12,12 @@ constructor(props){
   this.state = {
     showModal: false,
     selecBeast: ''
+
+
+    //userName: userName
+
+
+    
   }
 }
 
@@ -30,11 +36,52 @@ constructor(props){
     })
   }
 
+
+
+
+
+  handleSubmit = (event) => {
+    event.preventDefault();
+    let userName = event.target.userName.value    //numhorns instead of username check and change below in label
+    let selected = event.target.selected.value;
+
+    //add to state
+    this.setState({
+      userName: userName,
+    })
+  }
+
+
+
+
+
 render(){
   console.log(data, 'data')
   return(
     <>
     <Header/>
+
+
+
+
+
+    <form onSubmit={this.handleSubmit}>
+      <label>
+        <input type='text' name='userName' />
+      </label>
+      <fieldset>
+        <legend>selected</legend>
+        <select>
+          <option value='all'>all</option>
+        </select>
+      </fieldset>
+      <button type='submit'>submit</button>
+    </form>
+
+
+
+
+
     <Main
     data={data}
     handleOnShowModal={this.handleOnShowModal}
