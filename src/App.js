@@ -3,8 +3,7 @@ import Header from './Header';
 import Main from './Main';
 import Footer from './Footer';
 import data from './data/data.json'
-import { Modal, Card, ListGroup, Row, Form } from 'react-bootstrap';
-// import HornedBeast from './HornedBeast';
+import { Modal, Card, Form } from 'react-bootstrap';
 
 class App extends React.Component {
 
@@ -33,64 +32,34 @@ class App extends React.Component {
     })
   }
 
-
-
-
   handleSelect = (event) => {
-    let selected = event.target.value;  //selected is selected horn num i think
-    if (selected === 'One') {    //in legend?
-
+    let selected = event.target.value;
+    if (selected === 'One') {
       let newData = data.filter(ele => ele.horns === 1);
       this.setState({ sortedData: newData })
-      // console.log(newData, 'hornnum, newdat')
     } else if (selected === 'Two') {
       let newData = data.filter(ele => ele.horns === 2);
       this.setState({ sortedData: newData })
     } else if (selected === 'Three') {
         let newData = data.filter(ele => ele.horns === 3);
         this.setState({ sortedData: newData })
-    } 
-    else if (selected === 'One hundred') {
+    } else if (selected === 'One hundred') {
       let newData = data.filter(ele => ele.horns === 100);
       this.setState({ sortedData: newData })
-  } 
-    else {
-      //add update to
+    } else {
       this.setState({ sortedData: data })
-
     }
   }
 
-
-  render() {    //keep, is from before thurs
-
-    console.log(this.state.sortedData, 'sorteddata');
-
+  render() {
     let numbers = this.state.sortedData.map((element, index) => {
-      // console.log(element, 'element')
-      // return true;
       return element;
-      // <HornedBeast key={index} title={element.title} image_url={element.image_url} description={element.description}  /> 
     });
 
-
-    // console.log(data, 'data')  //these four lines also old
     return (
       <>
         <Header />
-
-
-
-
-        <Form 
-        // onChange={this.handleSelect} 
-        // onInput={this.handleInput}
-        >    //is in main tags in demo
-          {/* <Form.Label>
-            <Form.Control type='text' name='hornNum' onInput={this.handleInput} />
-          </Form.Label> */}
-
-
+        <Form>  
           <Form.Group>
             <p>selected</p>
             <Form.Select name='selected' onChange={this.handleSelect}>
@@ -99,20 +68,10 @@ class App extends React.Component {
               <option value='Three'>Three</option>
               <option value='One hundred'>One hundred</option>
             </Form.Select>
-            </Form.Group>
-          {/* <button type='submit'>submit</button> */}
+          </Form.Group>
         </Form>
 
-        {/* <ListGroup>
-        <Row lg={3}>
-          {numbers}
-          </Row>
-        </ListGroup> */}
-
-        <Main
-          data={numbers}
-          handleOnShowModal={this.handleOnShowModal}
-        />
+        <Main data={numbers} handleOnShowModal={this.handleOnShowModal} />
         <Footer />
         <Modal show={this.state.showModal} onHide={this.handleOnHide}>
           <Modal.Header closeButton>
