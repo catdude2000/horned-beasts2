@@ -12,7 +12,8 @@ class App extends React.Component {
     this.state = {
       showModal: false,
       selecBeast: '',
-      hornNum: ''
+      hornNum: '',
+      sortedData: data
     }
   }
 
@@ -62,12 +63,12 @@ class App extends React.Component {
       let newData = data.filter(ele => ele.horns === 1
         );
       this.setState({ sortedData: newData })
-      console.log(newData, 'hornnum, newdat')
+      // console.log(newData, 'hornnum, newdat')
     } else if (selected === 'two') {
-      let newData = data.filter(horns => horns === 2);
+      let newData = data.filter(ele => ele.horns === 2);
       this.setState({ sortedData: newData })
     } else if (selected === 'three') {
-        let newData = data.filter(horns => horns === 3);
+        let newData = data.filter(ele => ele.horns === 3);
         this.setState({ sortedData: newData })
     } else {
       //add update to
@@ -79,10 +80,13 @@ class App extends React.Component {
 
   render() {    //keep, is from before thurs
 
+console.log(this.state.sortedData, 'newdata');
 
-    // let numbers = this.state.newData.map((numbers) => {
-    //   return <ListGroupItem >{numbers}</ListGroupItem>
-    // });
+    let numbers = this.state.sortedData.map((element, index) => {
+      console.log(element, 'element')
+      // return true;
+      return <ListGroupItem key={index} > {element} </ListGroupItem>
+    });
 
 
 
@@ -93,7 +97,7 @@ class App extends React.Component {
         <Header />
 
         <ListGroup>
-          {/* {numbers} */}
+          {numbers}
         </ListGroup>
 
 
