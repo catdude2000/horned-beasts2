@@ -113,11 +113,11 @@ Finish time: 4:10
 Actual time needed to complete: 2:15
 
 
-Number and name of feature: ________________________________
+Number and name of feature: 3.1 Filter by number of horns
 
-Estimate of time needed to complete: _____
+Estimate of time needed to complete: 2 hours
 
-Start time: _____
+Start time: 1:50PM
 
 Finish time: _____
 
