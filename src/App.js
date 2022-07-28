@@ -13,13 +13,6 @@ class App extends React.Component {
       showModal: false,
       selecBeast: '',
       hornNum: ''
-
-      //userName: ''
-      //howTosort: ''
-      //sortedData: data
-
-
-
     }
   }
 
@@ -40,41 +33,40 @@ class App extends React.Component {
 
 
 
+  // handleSubmit = (event) => {
+  //   event.preventDefault();
+  //   let hornNum = event.target.hornNum.value    //numhorns instead of username check and change below in label
+  //   let selected = event.target.selected.value;
 
+  //   //add to state
+  //   this.setState({
+  //     hornNum: hornNum,
+  //     howToSort: selected
+  //   })
+  // }
 
-  handleSubmit = (event) => {
-    event.preventDefault();
-    let hornNum = event.target.hornNum.value    //numhorns instead of username check and change below in label
-    let selected = event.target.selected.value;
+  // handleInput = (event) => {
+  //   //dont need to prevent
+  //   let hornNum = event.target.value;
+  //   // console.log(hornNum, 'handleInput');
 
-    //add to state
-    this.setState({
-      hornNum: hornNum,
-      howToSort: selected
-    })
-  }
-
-  handleInput = (event) => {
-    //dont need to prevent
-    let hornNum = event.target.value;
-    // console.log(hornNum, 'handleInput');
-
-  }
+  // }
 
 
 
 
   handleSelect = (event) => {
     let selected = event.target.value;  //selected is selected horn num i think
-    if (selected === '1') {    //in legend?
+    if (selected === 'one') {    //in legend?
 
-      let newData = data.filter(number => number === 1);
+      let newData = data.filter(horns => horns === 1);
       this.setState({ sortedData: newData })
-    } else if (selected === '2') {
-      let newData = data.filter(number => number === 2);
+      console.log(newData, 'hornnum, newdat')
+    } else if (selected === 'two') {
+      let newData = data.filter(horns => horns === 2);
       this.setState({ sortedData: newData })
-    } else if (selected === '3') {
-        let newData = data.filter(number => number === 3);
+    } else if (selected === 'three') {
+        let newData = data.filter(horns => horns === 3);
         this.setState({ sortedData: newData })
     } else {
       //add update to
@@ -87,40 +79,44 @@ class App extends React.Component {
   render() {    //keep, is from before thurs
 
 
-    // let numbers = this.state.sortedData.map((number, index) => {
-    //   return <ListGroupItem key={index}>{number} - {this.state.sortedData[index]}</ListGroupItem>
+    // let numbers = this.state.newData.map((numbers) => {
+    //   return <ListGroupItem >{numbers}</ListGroupItem>
     // });
 
 
 
 
-    console.log(data, 'data')  //these four lines also old
+    // console.log(data, 'data')  //these four lines also old
     return (
       <>
         <Header />
 
-
-
-
         <ListGroup>
           {/* {numbers} */}
         </ListGroup>
-        <Form onSubmit={this.handleSubmit} onInput={this.handleInput}>    //is in main tags in demo
-          <Form.Label>
-            <Form.Control type='text' name='userName' onInput={this.handleInput} />
-          </Form.Label>
+
+
+        <Form 
+        // onChange={this.handleSelect} 
+        // onInput={this.handleInput}
+        >    //is in main tags in demo
+          {/* <Form.Label>
+            <Form.Control type='text' name='hornNum' onInput={this.handleInput} />
+          </Form.Label> */}
+
+
+
+
           <Form.Group>
             <p>selected</p>
-            <select name='selected' onChange={this.handleSelect}>
-              <option value='all'>all</option>
-              {/* even
-          odd */}
-            </select>
+            <Form.Select name='selected' onChange={this.handleSelect}>
+              <option value='one'>one</option>
+              <option value='two'>two</option>
+              <option value='three'>three</option>
+            </Form.Select>
             </Form.Group>
-          <button type='submit'>submit</button>
+          {/* <button type='submit'>submit</button> */}
         </Form>
-
-
 
 
 

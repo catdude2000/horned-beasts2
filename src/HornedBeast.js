@@ -22,7 +22,7 @@ class HornedBeast extends React.Component {
   };
 
   render(){
-    console.log(this.props.image_url, 'hbimgurl')
+    // console.log(this.props.image_url, 'hbimgurl')
     return(
         <>
         <Col>
