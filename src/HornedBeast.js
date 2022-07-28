@@ -1,7 +1,6 @@
 import React from 'react';
 import { Card, Col } from 'react-bootstrap';
 
-
 class HornedBeast extends React.Component {
 
   constructor(props){
@@ -22,7 +21,6 @@ class HornedBeast extends React.Component {
   };
 
   render(){
-    // console.log(this.props.image_url, 'hbimgurl')
     return(
         <>
         <Col>
