@@ -11,8 +11,8 @@ class App extends React.Component {
     super(props);
     this.state = {
       showModal: false,
-      selecBeast: ''
-
+      selecBeast: '',
+      hornNum: ''
 
       //userName: ''
       //howTosort: ''
@@ -44,20 +44,20 @@ class App extends React.Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    let userName = event.target.userName.value    //numhorns instead of username check and change below in label
+    let hornNum = event.target.hornNum.value    //numhorns instead of username check and change below in label
     let selected = event.target.selected.value;
 
     //add to state
     this.setState({
-      userName: userName,
+      hornNum: hornNum,
       howToSort: selected
     })
   }
 
   handleInput = (event) => {
     //dont need to prevent
-    let userName = event.target.value;
-    console.log(userName, 'handleInput');
+    let hornNum = event.target.value;
+    // console.log(hornNum, 'handleInput');
 
   }
 
@@ -66,12 +66,16 @@ class App extends React.Component {
 
   handleSelect = (event) => {
     let selected = event.target.value;  //selected is selected horn num i think
-    if (selected === 'even') {    //in legend?
-      let newData = data.filter(number => number % 2 === 0);
+    if (selected === '1') {    //in legend?
+
+      let newData = data.filter(number => number === 1);
       this.setState({ sortedData: newData })
-    } else if (selected === 'odd') {
-      let newData = data.filter(number => number % 2 === 1);
+    } else if (selected === '2') {
+      let newData = data.filter(number => number === 2);
       this.setState({ sortedData: newData })
+    } else if (selected === '3') {
+        let newData = data.filter(number => number === 3);
+        this.setState({ sortedData: newData })
     } else {
       //add update to
       this.setState({ sortedData: data })
@@ -80,18 +84,12 @@ class App extends React.Component {
   }
 
 
-
-
   render() {    //keep, is from before thurs
 
 
-
-
-    let numbers = this.state.sortedData.map((number, index) => {
-      return <ListGroupItem key={index}>{number} - {this.state.sortedData[index]}</ListGroupItem>
-    });
-
-
+    // let numbers = this.state.sortedData.map((number, index) => {
+    //   return <ListGroupItem key={index}>{number} - {this.state.sortedData[index]}</ListGroupItem>
+    // });
 
 
 
@@ -105,7 +103,7 @@ class App extends React.Component {
 
 
         <ListGroup>
-          {numbers}
+          {/* {numbers} */}
         </ListGroup>
         <Form onSubmit={this.handleSubmit} onInput={this.handleInput}>    //is in main tags in demo
           <Form.Label>
@@ -118,8 +116,7 @@ class App extends React.Component {
               {/* even
           odd */}
             </select>
-            <Form.Group/>
-          </fieldset>
+            </Form.Group>
           <button type='submit'>submit</button>
         </Form>
 
