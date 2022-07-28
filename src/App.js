@@ -59,7 +59,8 @@ class App extends React.Component {
     let selected = event.target.value;  //selected is selected horn num i think
     if (selected === 'one') {    //in legend?
 
-      let newData = data.filter(horns => horns === 1);
+      let newData = data.filter(ele => ele.horns === 1
+        );
       this.setState({ sortedData: newData })
       console.log(newData, 'hornnum, newdat')
     } else if (selected === 'two') {
